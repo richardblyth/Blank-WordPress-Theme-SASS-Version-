@@ -15,10 +15,8 @@
     <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
     <script>
-      $(document).foundation();
-      
-      //Set Template URL Variable
-      var templateUrl = '<?= get_bloginfo("template_url"); ?>';
+      //Use as required
+      //var templateUrl = '<?= get_bloginfo("template_url"); ?>';
     </script>
     <?php wp_footer(); ?>
   </body>

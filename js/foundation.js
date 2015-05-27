@@ -733,12 +733,14 @@
     version : '5.5.2',
 
     settings : {
-      live_validate : true,
-      validate_on_blur : true,
+      live_validate : true, // validate the form as you go
+      validate_on_blur : true, // validate whenever you focus/blur on an input field
       // validate_on: 'tab', // tab (when user tabs between fields), change (input changes), manual (call custom events) 
-      focus_on_invalid : true,
+      focus_on_invalid : true, // automatically bring the focus to an invalid input field
       error_labels : true, // labels with a for="inputId" will recieve an `error` class
-      error_class : 'error',
+      error_class : 'error', // labels with a for="inputId" will recieve an `error` class
+      // the amount of time Abide will take before it validates the form (in ms). 
+      // smaller time will result in faster validation
       timeout : 1000,
       patterns : {
         alpha : /^[a-zA-Z]+$/,
@@ -1025,6 +1027,7 @@
         }
         validations = validations.concat(el_validations);
       }
+
       return validations;
     },
 
@@ -4718,7 +4721,7 @@
       settings = settings || this.settings;
 
 
-      if (modal.hasClass('open') && target.attr('data-reveal-id') == modal.attr('id')) {
+      if (modal.hasClass('open') && target !== undefined && target.attr('data-reveal-id') == modal.attr('id')) {
         return self.close(modal);
       }
 
@@ -5607,6 +5610,8 @@
       touch_close_text : 'Tap To Close',
       disable_for_touch : false,
       hover_delay : 200,
+      fade_in_duration : 150,
+      fade_out_duration : 150,
       show_on : 'all',
       tip_template : function (selector, content) {
         return '<span data-selector="' + selector + '" id="' + selector + '" class="'
@@ -5901,19 +5906,19 @@
 
     show : function ($target) {
       var $tip = this.getTip($target);
-
       if ($target.data('tooltip-open-event-type') == 'touch') {
         this.convert_to_touch($target);
       }
 
       this.reposition($target, $tip, $target.attr('class'));
       $target.addClass('open');
-      $tip.fadeIn(150);
+      $tip.fadeIn(this.settings.fade_in_duration);
     },
 
     hide : function ($target) {
       var $tip = this.getTip($target);
-      $tip.fadeOut(150, function () {
+
+      $tip.fadeOut(this.settings.fade_out_duration, function () {
         $tip.find('.tap-to-close').remove();
         $tip.off('click.fndtn.tooltip.tapclose MSPointerDown.fndtn.tapclose');
         $target.removeClass('open');

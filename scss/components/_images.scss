@@ -1,8 +1,0 @@
-$main-sprite-size: 1150px 1500px;
-$main-sprite-image: 'images/main-sprite';
-
-.main-sprite {
-	// http://bourbon.io/docs/#retina-image
-	@include retina-image($main-sprite-image, $main-sprite-size);
-	background-repeat: no-repeat;
-}

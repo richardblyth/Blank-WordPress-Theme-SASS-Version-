@@ -1,15 +1,17 @@
 // Bourbon mixin library
 @import "bourbon";
 
+//Settings
+@import "settings";
+
 // Normalize
 @import "normalize";
 
-// Foundation
-@import "settings";
-//@import "foundation";
+//Foundation (All components)
+@import "foundation";
 
 // Or selectively include components
- @import
+// @import
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
 //   "foundation/components/block-grid",
@@ -20,8 +22,8 @@
 //   "foundation/components/dropdown",
 //   "foundation/components/dropdown-buttons",
 //   "foundation/components/flex-video",
-// "foundation/components/forms",
-   "foundation/components/grid",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
 //   "foundation/components/inline-lists",
 //   "foundation/components/joyride",
 //   "foundation/components/keystrokes",
@@ -42,20 +44,26 @@
 //   "foundation/components/thumbs",
 //   "foundation/components/tooltips",
 //   "foundation/components/top-bar",
-   "foundation/components/type",
+//   "foundation/components/type",
 //   "foundation/components/offcanvas",
-   "foundation/components/visibility";
+//   "foundation/components/visibility";
 
+// Slick (SCSS)
+@import "slick/slick";
 
-
-// Our components
+//Import our bespoke components
 @import 
-  "components/type",
-  "components/fonts",
-  "components/visibility",
-  "components/global",
-  "components/colours",
-  "components/images",
-//  "components/animations",
-  "components/buttons",
-  "components/layout";
+  "components/variables", 
+  "components/hacks", 
+  "components/ie", 
+  "components/fonts", 
+  "components/global", 
+  "components/colours", 
+  "components/images", 
+  "components/hoverpanels", 
+  "components/animations", 
+  "components/buttons", 
+  "components/forms", 
+  "components/layout", 
+  "components/tabs", 
+  "components/slick";

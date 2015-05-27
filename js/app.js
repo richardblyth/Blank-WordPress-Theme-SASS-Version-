@@ -33,10 +33,29 @@
 // prepros-prepend foundation/foundation.tooltip.js
 // prepros-prepend foundation/foundation.topbar.js
 
+// Slick http://kenwheeler.github.io/slick/
+//@prepros-prepend vendor/slick.js
+
+// Tabs
+//@prepros-prepend vendor/tabs.js
 
 // Other plugins: from HTML 5 Boilerplate 4.3.0
 //@prepros-prepend plugins.js
 
-/* let's do it *******************************************************************/
 
+/* INITIALISE */
 $(document).foundation();
+
+
+$(function() {
+
+  /* Slick */
+  $('.example-carousel').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true
+  });
+
+
+});

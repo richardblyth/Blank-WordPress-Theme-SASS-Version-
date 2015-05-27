@@ -1,0 +1,53 @@
+/* Tabs 
+Example markup -
+<div class="js-tab-container">
+  <ul class="js-tabs-menu">
+    <li><a href="#tab-one" class="current">Tab One</a></li>
+    <li><a href="#tab-two">Tab Two</a></li>
+    <li><a href="#tab-three">Tab Three</a></li>
+  </ul>
+
+  <div class="js-tabs">
+    <div class="js-tab-single js-tab-first" id="tab-one">First tab</div>
+    <div class="js-tab-single" id="tab-two">Second tab</div>
+    <div class="js-tab-single" id="tab-three">Third tab</div>
+  </div>
+</div>
+*/
+
+
+.js-tab-container {
+  width: 100%;
+
+  .js-tabs-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    li {
+      display: inline;
+    }
+
+    .current {
+      a {
+        color: red; /* TEMP */
+      }
+    }
+  }
+
+  .js-tabs {
+    float: left;
+    width: 100%;
+
+    .js-tab-single {
+      display: none;
+      height: 100% !important;
+    }
+    
+    /* Apply this class to the tab to display first */
+    .js-tab-first {
+      display: block;
+    }
+  }
+}

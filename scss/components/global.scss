@@ -1,0 +1,22 @@
+/* Global Elements */
+
+img {
+  width: 100%;
+  height: auto !important;
+}
+
+p {
+  img { 
+    margin: 0.5em auto; 
+  }
+}
+
+iframe {
+  border: 0 none;
+}
+
+/* Global Mixins */
+@mixin background-cover() {
+  background-position: 50% 50%;
+  background-size: cover;
+}

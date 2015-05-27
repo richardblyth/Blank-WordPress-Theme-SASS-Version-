@@ -1,0 +1,49 @@
+/* General Browser Hacks and Fixes */
+
+/* Browsehappy Message */
+.browsehappy {
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+/* No JavaScript Message */
+.no-js {
+  .no-jsmsg {
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  /* List classes/ID of elements to hide if JavaScript is turned off here: */
+
+}
+.js {
+  .no-jsmsg {
+    display: none;
+  }
+}
+
+/* Remove Safari Focus Outline */
+input:focus { 
+  outline: none;
+}   
+textarea:focus { 
+  outline: none; 
+}
+
+/* Prevent textarea resize */
+textarea {
+  resize: none;
+}
+
+/* Remove Firefox Link Outlines */
+a, a:visited, a:active, a:focus { 
+  outline: 0; 
+}
