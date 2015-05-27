@@ -14,8 +14,11 @@ function other_scripts() {
 
   //CSS
   wp_enqueue_style( 'appcss', get_template_directory_uri() . '/css/app.css', array(), null );
+
+  //Head Scripts
+  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.min.js', array(), '2.8.3');
   
-  //Scripts
+  //End of Document Scripts
   wp_enqueue_script( 'appjs', get_template_directory_uri() . '/js/app-dist.js', array('jquery'), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'other_scripts' );
