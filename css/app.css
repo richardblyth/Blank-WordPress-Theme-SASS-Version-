@@ -8719,6 +8719,32 @@ iframe {
 
 /* Global Mixins */
 /* Colour Palette */
+/* Default Foundation colours (REFERENCE)
+
+$primary-color: #008CBA !default;   // bondi-blue
+$secondary-color: #e7e7e7 !default; // white-lilac
+$alert-color: #f04124 !default;     // cinnabar
+
+$white         : #FFFFFF !default;
+$ghost         : #FAFAFA !default;
+$snow          : #F9F9F9 !default;
+$vapor         : #F6F6F6 !default;
+$white-smoke   : #F5F5F5 !default;
+$silver        : #EFEFEF !default;
+$smoke         : #EEEEEE !default;
+$gainsboro     : #DDDDDD !default;
+$iron          : #CCCCCC !default;
+$base          : #AAAAAA !default;
+$aluminum      : #999999 !default;
+$jumbo         : #888888 !default;
+$monsoon       : #777777 !default;
+$steel         : #666666 !default;
+$charcoal      : #555555 !default;
+$tuatara       : #444444 !default;
+$oil           : #333333 !default;
+$jet           : #222222 !default;
+$black         : #000000 !default;
+*/
 /* Images */
 /* Dimensions of the main sprite */
 /* Path to the main sprite */
@@ -9792,6 +9818,51 @@ stretchRight
     -webkit-transform: scaleX(1);
   }
 }
+/* Menus */
+/* Main/header menu */
+.main-menu div .menu {
+  /* Current page indicator */
+  /* Drop downs */
+}
+.main-menu div .menu .menu-item a {
+  color: #008CBA;
+}
+.main-menu div .menu .menu-item a:hover {
+  color: #e7e7e7;
+}
+.main-menu div .menu .current-menu-item a,
+.main-menu div .menu .current-page-parent a {
+  color: #f04124;
+}
+.main-menu div .menu .menu-item-has-children .sub-menu {
+  /* Current page indicator */
+}
+.main-menu div .menu .menu-item-has-children .sub-menu .menu-item a {
+  color: #008CBA;
+}
+.main-menu div .menu .menu-item-has-children .sub-menu .menu-item a:hover {
+  color: #e7e7e7;
+}
+.main-menu div .menu .menu-item-has-children .sub-menu .current-menu-item a,
+.main-menu div .menu .menu-item-has-children .sub-menu .current-page-parent a {
+  color: #f04124;
+}
+
+/* Footer menu */
+.footer-menu div .menu {
+  /* Current page indicator */
+}
+.footer-menu div .menu .menu-item a {
+  color: #008CBA;
+}
+.footer-menu div .menu .menu-item a:hover {
+  color: #e7e7e7;
+}
+.footer-menu div .menu .current-menu-item a,
+.footer-menu div .menu .current-page-parent a {
+  color: #f04124;
+}
+
 /* Buttons */
 /* All items with a class of btn- */
 [class*="btn-"] {
@@ -9800,7 +9871,85 @@ stretchRight
 }
 
 /* Forms */
-/* Layout */
+/* Comments */
+/* partials/comments.php */
+.post_comments,
+.comments_form {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  width: 100%;
+}
+.post_comments:before, .post_comments:after,
+.comments_form:before,
+.comments_form:after {
+  content: " ";
+  display: table;
+}
+.post_comments:after,
+.comments_form:after {
+  clear: both;
+}
+.post_comments > .inner,
+.comments_form > .inner {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left;
+}
+
+/* Layout
+This is the main SCSS file, each page template's layout elements defined here */
+/*********** Header & Footer ***********/
+/* Header */
+.main-header {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  width: 100%;
+}
+.main-header:before, .main-header:after {
+  content: " ";
+  display: table;
+}
+.main-header:after {
+  clear: both;
+}
+
+/* Footer */
+.main-footer {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  width: 100%;
+}
+.main-footer:before, .main-footer:after {
+  content: " ";
+  display: table;
+}
+.main-footer:after {
+  clear: both;
+}
+
+/*********** Page Layouts ***********/
+/* Sample Content
+used as an example */
+.sample_content {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  width: 100%;
+}
+.sample_content:before, .sample_content:after {
+  content: " ";
+  display: table;
+}
+.sample_content:after {
+  clear: both;
+}
+.sample_content > .inner {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left;
+}
+
 /* Tabs 
 Example markup -
 <div class="js-tab-container">
@@ -9846,34 +9995,17 @@ Example markup -
   display: block;
 }
 
-/* Example markup 
-<div class="row">
-  <div class="example-carousel">
-    <div>Slide 1</div>
-    <div>Slide 2</div>
-    <div>Slide 3</div>
-  </div>
-</div>
-
-Initialise the carousel in apps.js -
-
-$('.example-carousel').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  dots: true,
-  arrows: true
-});
-*/
+/* Override these settngs in carousels.js */
 /* Slider */
 .slick-loading .slick-list {
-  background: #fff url("./css/images/ajax-loader.gif") center center no-repeat;
+  background: #fff url("./images/ajax-loader.gif") center center no-repeat;
 }
 
 /* Icons */
 @font-face {
   font-family: "slick";
-  src: url("/css/fonts/slick.eot");
-  src: url("/css/fonts/slick.eot?#iefix") format("embedded-opentype"), url("/css/fonts/slick.woff") format("woff"), url("/css/fonts/slick.ttf") format("truetype"), url("/css/fonts/slick.svg#slick") format("svg");
+  src: url("../scss/slick/fonts/slick.eot");
+  src: url("../scss/slick/fonts/slick.eot?#iefix") format("embedded-opentype"), url("../scss/slick/fonts/slick.woff") format("woff"), url("../scss/slick/fonts/slick.ttf") format("truetype"), url("../scss/slick/fonts/slick.svg#slick") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -10011,6 +10143,72 @@ $('.example-carousel').slick({
 .slick-dots li.slick-active button:before {
   color: black;
   opacity: 0.75;
+}
+
+/* Slick Carousels */
+/* These classes override those in slick.scss */
+/* Example markup 
+<div class="row">
+  <div class="example-carousel">
+    <div>Slide 1</div>
+    <div>Slide 2</div>
+    <div>Slide 3</div>
+  </div>
+</div>
+
+Initialise the carousel in apps.js -
+
+$('.example-carousel').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: true,
+  arrows: true
+});
+*/
+/* Example Carousel (as per markup above) */
+.example-carousel {
+  margin-bottom: 0;
+  /* Bullets */
+  /* Controls */
+}
+.example-carousel div {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+.example-carousel .slick-dots {
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+.example-carousel .slick-dots li {
+  height: auto;
+}
+.example-carousel .slick-dots li button {
+  height: auto;
+}
+.example-carousel .slick-dots li button:before {
+  font-size: 1.875rem;
+}
+.example-carousel .slick-prev,
+.example-carousel .slick-next {
+  bottom: 0;
+  z-index: 2;
+}
+.example-carousel .slick-prev {
+  left: 2rem;
+}
+.example-carousel .slick-next {
+  right: 2rem;
+}
+
+@media only screen and (max-width: 40em) {
+  /* for some responsive options, please use app.js */
+}
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  /* for some responsive options, please use app.js */
 }
 
 /*# sourceMappingURL=app.css.map */

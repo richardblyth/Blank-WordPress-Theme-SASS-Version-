@@ -1,1 +1,59 @@
-/* Layout */
+/* Layout
+This is the main SCSS file, each page template's layout elements defined here */
+
+/*********** Header & Footer ***********/
+
+/* Header */
+.main-header {
+  @include grid-row;
+}
+@media #{$small-only} {
+  .main-header {
+
+  }
+}
+
+@media #{$medium-only} {
+  .main-header {
+
+  }
+}
+
+/* Footer */
+.main-footer {
+  @include grid-row;
+}
+@media #{$small-only} {
+  .main-footer {
+
+  }
+}
+
+@media #{$medium-only} {
+  .main-footer {
+
+  }
+}
+
+/*********** Page Layouts ***********/
+
+/* Sample Content
+used as an example */
+.sample_content {
+  @include grid-row;
+
+  > .inner {
+    @include grid-column(12);
+  }
+}
+@media #{$small-only} {
+  .sample_content {
+
+  }
+}
+
+@media #{$medium-only} {
+  .sample_content {
+
+  }
+}

@@ -1,0 +1,78 @@
+/* Slick Carousels */
+/* These classes override those in slick.scss */
+
+/* Example markup 
+<div class="row">
+  <div class="example-carousel">
+    <div>Slide 1</div>
+    <div>Slide 2</div>
+    <div>Slide 3</div>
+  </div>
+</div>
+
+Initialise the carousel in apps.js -
+
+$('.example-carousel').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: true,
+  arrows: true
+});
+*/
+
+/* Example Carousel (as per markup above) */
+.example-carousel {
+  margin-bottom: 0;
+
+  div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+
+  /* Bullets */
+  .slick-dots {
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+
+    li {
+      height: auto;
+
+      button {
+        height: auto;
+
+        &:before {
+          font-size: rem-calc(30);
+        }
+      }
+    }
+  }
+
+  /* Controls */
+  .slick-prev,
+  .slick-next {
+    bottom: 0;
+    z-index: 2;
+  }
+  .slick-prev {
+    left: 2rem;
+  }
+  .slick-next {
+    right: 2rem;
+  }
+}
+
+@media #{$small-only} {
+  /* for some responsive options, please use app.js */
+  .example-carousel {
+  }
+}
+
+@media #{$medium-only} {
+  /* for some responsive options, please use app.js */
+  .example-carousel {
+  }
+}

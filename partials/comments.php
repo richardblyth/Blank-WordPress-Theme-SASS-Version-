@@ -6,8 +6,8 @@ if ( post_password_required() )
   return;
 ?>
         
-        <div class="row">
-          <section class="small-12 medium-12 large-12 columns">
+        <section class="post-comments">
+          <div class="inner">
             <?php 
               //Query approved comments for the current post
               $postid = get_the_ID(); 
@@ -39,13 +39,13 @@ if ( post_password_required() )
               <p>There are no comments for this post.</p>
               <?php } ?>
 
-          </section>
-        </div>
+          </div>
+        </section>
 
         <?php //If comments are open for this post
         if (comments_open()){ ?>
-        <section class="row">
-          <div class="small-12 medium-12 large-12 columns">
+        <section class="comments_form">
+          <div class="inner">
           <?php comment_form(); ?>
           </div>
         </section>

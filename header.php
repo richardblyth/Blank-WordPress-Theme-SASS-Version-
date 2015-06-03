@@ -20,18 +20,19 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <header class="row">    
-      <div class="small-12 medium-4 large-4 columns">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Homepage">Homepage</a>
-      </div>
-      <div class="small-12 medium-4 large-4 columns">
+    <header class="main-header">    
+      <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Homepage">Homepage</a>
+
+      <nav class="main-menu">
       <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
-      </div>
-      <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="small-12 medium-4 large-4 columns">
+      </nav>
+
+      <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
         <fieldset>
           <label for="search">Search</label>
           <input type="text" name="s" id="search" value="<?php the_search_query(); ?>">
           <input type="submit" name="submit" value="Search">
         </fieldset>
       </form>
-    </header><!--/row-->        
+
+    </header>

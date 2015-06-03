@@ -2,10 +2,10 @@
 //Main footer
 ?>
 
-    <footer class="row">
-      <div class="small-12 medium-12 large-12 columns">
-      Our footer
-      </div>
+    <footer class="main-footer">
+      <nav class="footer-menu">
+      <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+      </nav>
     </footer>
 
     <div class="no-jsmsg">

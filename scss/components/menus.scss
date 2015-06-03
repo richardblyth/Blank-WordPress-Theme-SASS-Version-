@@ -1,0 +1,70 @@
+/* Menus */
+
+/* Main/header menu */
+.main-menu {
+  div {
+    .menu {
+      .menu-item {
+        a { 
+          color: $primary-color;
+        }
+        a:hover {
+          color: $secondary-color;
+        }
+      }
+
+      /* Current page indicator */
+      .current-menu-item,
+      .current-page-parent {
+        a {
+          color: $alert-color;
+        }
+      }
+
+      /* Drop downs */
+      .menu-item-has-children {
+        .sub-menu {
+          .menu-item {
+            a {
+              color: $primary-color;
+            }
+            a:hover{
+              color: $secondary-color;
+            }
+          }
+          /* Current page indicator */
+          .current-menu-item,
+          .current-page-parent {
+            a {
+              color: $alert-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Footer menu */
+.footer-menu {
+  div {
+    .menu {
+      .menu-item {
+        a {
+          color: $primary-color;
+        }
+        a:hover {
+          color: $secondary-color;
+        }
+      }
+
+      /* Current page indicator */
+      .current-menu-item,
+      .current-page-parent {
+        a {
+          color: $alert-color;
+        }
+      }
+    }
+  }
+}

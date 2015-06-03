@@ -12,21 +12,23 @@
 
 get_header(); ?>
 
-      <div class="row">
+      <section class="sample_content">
+        <div class="inner">
+        <?php if (have_posts()) :
 
-      <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
-        <div class="small-12 medium-12 large-12 columns">
-        <h1><?php the_title(); ?></h1>
-        <?php the_content(); ?>
-        <?php endwhile; ?>
+          while (have_posts()) : the_post(); ?>
 
-        <?php else : ?>
-        <h1>Oops!</h1>
-        <p>Sorry, but you are looking for something that isn't here.</p>
+          <h1><?php the_title(); ?></h1>
+          <?php the_content(); ?>
+
+          <?php endwhile; ?>
+
+          <?php else : ?>
+          <h1>Oops!</h1>
+          <p>Sorry, but you are looking for something that isn't here.</p>
+
+        <?php endif; ?>
         </div>
-      <?php endif; ?>
-      
-      </div><!--/row-->
+      </section>
 
 <?php get_footer(); ?>

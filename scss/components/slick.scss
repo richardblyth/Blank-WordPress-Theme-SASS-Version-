@@ -1,26 +1,7 @@
-//Slick Theme Defaults
+//Slick.js Default CSS
+/* Override these settngs in carousels.js */
 
-/* Example markup 
-<div class="row">
-  <div class="example-carousel">
-    <div>Slide 1</div>
-    <div>Slide 2</div>
-    <div>Slide 3</div>
-  </div>
-</div>
-
-Initialise the carousel in apps.js -
-
-$('.example-carousel').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  dots: true,
-  arrows: true
-});
-*/
-
-
-$slick-font-path: "/css/fonts/" !default;
+$slick-font-path: "../scss/slick/fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: black !default;
@@ -56,7 +37,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-list {
     .slick-loading & {
-        background: #fff slick-image-url("css/images/ajax-loader.gif") center center no-repeat;
+        background: #fff slick-image-url("images/ajax-loader.gif") center center no-repeat;
     }
 }
 
