@@ -5,8 +5,8 @@ get_header(); ?>
       <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>     
         
-        <header class="row">
-          <div class="small-12 medium-12 large-12 columns">
+        <header class="sample_header">
+          <div class="inner">
             <h1><?php the_title(); ?></h1>
             <aside>
             Posted to: <?php echo get_the_category_list() ?>
@@ -15,8 +15,8 @@ get_header(); ?>
           </div>
         </header>
 
-        <article class="row">
-          <div class="small-12 medium-12 large-12 columns">
+        <article class="sample_content">
+          <div class="inner">
           <?php the_content(); ?>
           </div>
         </article>
@@ -27,12 +27,12 @@ get_header(); ?>
         <?php endwhile; ?>
 
       <?php else : ?>
-        <div class="row">
-          <div class="small-12 medium-12 large-12 columns">
+        <section class="sample_content">
+          <div class="inner">
             <h1>Oops!</h1>
             <p>Sorry, but you are looking for something that isn't here.</p>
           </div>
-        </div><!--/row-->
+        </section>
       <?php endif; ?>
       
       

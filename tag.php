@@ -3,18 +3,18 @@
 
 get_header(); ?>
 
-    <header class="row page-header">
-      <div class="small-12 columns">
+    <header class="sample_header">
+      <div class="inner">
       <h1><?php echo single_tag_title(); ?></h1>
       </div>
     </header>
 
-    <section id="category-posts">
+    <section class="sample_content" id="category-posts">
 
     <?php if ( have_posts() ) : ?>
 
 
-      <div class="row"> 
+      <div class="inner"> 
 
       <?$count = 0; //set up counter variable
       ?>
@@ -24,7 +24,7 @@ get_header(); ?>
         $count++; //increment the variable by 1 each time the loop executes
         ?>
 
-        <div class="small-12 medium-4 large-12 columns clearfix">
+        <div>
           <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
           <?php
             if ( has_post_thumbnail() ) {
@@ -43,14 +43,12 @@ get_header(); ?>
 
       <?php endwhile; ?>
 
-      </div><!--/row-->
+      </div>
 
       <?php else : ?>
-        <div class="row">
-          <div class="small-12 medium-12 large-12 columns">
+          <div class="inner">
           <p>Sorry, but you are looking for something that isn't here.</p>
           </div>
-        </div><!--/row-->
       <?php endif; ?>     
 
     </section>

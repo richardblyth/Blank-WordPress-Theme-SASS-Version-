@@ -9931,19 +9931,24 @@ This is the main SCSS file, each page template's layout elements defined here */
 /*********** Page Layouts ***********/
 /* Sample Content
 used as an example */
-.sample_content {
+.sample_content,
+.sample_header {
   margin: 0 auto;
   max-width: 62.5rem;
   width: 100%;
 }
-.sample_content:before, .sample_content:after {
+.sample_content:before, .sample_content:after,
+.sample_header:before,
+.sample_header:after {
   content: " ";
   display: table;
 }
-.sample_content:after {
+.sample_content:after,
+.sample_header:after {
   clear: both;
 }
-.sample_content > .inner {
+.sample_content > .inner,
+.sample_header > .inner {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   width: 100%;

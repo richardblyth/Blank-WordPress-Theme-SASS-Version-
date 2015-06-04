@@ -3,17 +3,17 @@
 
 get_header(); ?>
 
-      <header class="row page-header">
-        <div class="small-12 medium-12 large-12 columns">
+      <header class="sample_header">
+        <div class="inner">
         <h1><?php echo single_cat_title(); ?></h1>
         </div>
       </header><!--/row-->
 
-      <section>
+      <section class="sample_content">
 
       <?php if ( have_posts() ) : ?>
 
-        <div class="row"> 
+        <div class="inner"> 
 
       <?$count = 0; //set up counter variable
       ?>
@@ -44,19 +44,15 @@ get_header(); ?>
 
         </div><!--/row-->
 
-        <div class="row">
-          <div class="small-12 medium-12 large-12 columns">
-            <div class="nav-previous"><?php next_posts_link( 'Older posts' ); ?></div>
-            <div class="nav-next"><?php previous_posts_link( 'Newer posts' ); ?></div>
-          </div>
-        </div><!--/row-->
+        <nav>
+          <div class="nav-previous"><?php next_posts_link( 'Older posts' ); ?></div>
+          <div class="nav-next"><?php previous_posts_link( 'Newer posts' ); ?></div>
+        </nav>
 
       <?php else : ?>
-        <div class="row">
-          <div class="small-12 medium-12 large-12 columns">
+          <div class="inner">
           <p>Sorry, but you are looking for something that isn't here.</p>
           </div>
-        </div><!--/row-->
       <?php endif; ?>
       
       </section>

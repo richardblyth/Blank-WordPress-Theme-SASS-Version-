@@ -5,18 +5,15 @@ get_header(); ?>
 
     <?php if ( have_posts() ) : ?>
 
-      <header class="row" id="author-header">
-        <div class="small-12 medium-2 columns">
+      <header class="sample_header">
+        <div class="inner">
         <?php echo get_avatar( get_the_author_meta('email') , 90 ); ?>
-        </div>
-
-        <div class="small-12 medium-10 columns">
         <h1><?php echo get_the_author(); ?></h1>
         <p><?php echo get_the_author_meta('description'); ?></p>
         </div>
       </header>
 
-      <section>
+      <section class="sample_content">
       <?php  
         global $query_string;
         query_posts( $query_string . '&posts_per_page=99' ); ?>
@@ -46,7 +43,7 @@ get_header(); ?>
         if ($count % 3 == 0) { ?></div><div class="row"><?php } ?>  
 
         <?php endwhile;?>
-        </div><!--/row-->
+        </div>
 
       </section>
 

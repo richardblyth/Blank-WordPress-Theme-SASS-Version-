@@ -14,20 +14,20 @@ foreach($query_args as $key => $string) {
 
 get_header(); ?>
 
-    <header class="row page-header">
-      <div class="small-12 medium-12 large-12 columns">
+    <header class="sample_header">
+      <div class="inner">
       <?php if ($wp_query->found_posts == 1) { ?>
         <h1>1 result for <?php echo get_search_query(); ?></h1>
       <?php } else { ?>
         <h1><?php echo $wp_query->found_posts; ?> results for <?php echo get_search_query(); ?></h1>
       <?php } ?>
       </div>
-    </header><!--/row-->
+    </header>
 
 
     <?php if ( have_posts() ) : ?>
 
-    <div class="row"> 
+    <section class="sample_content">
 
       <?$count = 0; //set up counter variable
       ?>
@@ -37,7 +37,7 @@ get_header(); ?>
       $count++; //increment the variable by 1 each time the loop executes
       ?>
       
-        <div class="small-12 medium-4 large-12 columns clearfix">
+        <div class="inner">
           <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
           <?php
             if ( has_post_thumbnail() ) {
@@ -55,22 +55,20 @@ get_header(); ?>
         if ($count % 3 == 0) { ?></div><div class="row"><?php } ?>  
 
       <?php endwhile; ?>
-    </div><!--/row-->
+    </section>
     
-    <div class="row">
-      <div class="small-12 medium-12 large-12 columns pagination clearfix">
-        <div class="nav-previous"><?php next_posts_link( 'Previous' ); ?></div>
-        <div class="nav-next"><?php previous_posts_link( 'Next' ); ?></div>
-      </div>
-    </div><!--/row-->
+    <nav>>
+      <div class="nav-previous"><?php next_posts_link( 'Previous' ); ?></div>
+      <div class="nav-next"><?php previous_posts_link( 'Next' ); ?></div>
+    </nav>
 
     <?php else : ?>
 
-      <div class="row">
-        <div class="small-12 medium-12 large-12 columns">
+      <section class="sample_content">
+        <div class="inner">
           <p>Sorry, but nothing matched your search criteria.</p>
-        </div><!-- .entry-content -->
-      </div><!--/row-->
+        </div>
+      </section>
 
     <?php endif; ?>
 

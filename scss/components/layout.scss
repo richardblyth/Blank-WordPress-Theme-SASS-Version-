@@ -39,7 +39,8 @@ This is the main SCSS file, each page template's layout elements defined here */
 
 /* Sample Content
 used as an example */
-.sample_content {
+.sample_content,
+.sample_header {
   @include grid-row;
 
   > .inner {

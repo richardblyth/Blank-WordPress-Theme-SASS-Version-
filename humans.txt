@@ -1,16 +1,17 @@
 # TEAM
 
-    Developer: Richard Blyth
+    Developer: Richard Blyth, www.richardblyth.com
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery 1.11.1
-    Foundation 5.4 Custom
+    jQuery 2.1.3
+    Foundation 5 Custom
     Modernizr
+    WordPress
 
 # SITE
   
-  Last update: 2014/12/03
+  Last update: 2015/06/04
   Language: English
   Doctype: HTML5

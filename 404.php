@@ -5,8 +5,8 @@
  */
 get_header(); ?>
 
-      <div class="row">
-        <div class="small-12 medium-12 large-12 columns">
+      <section class="sample_content">
+        <div class="inner">
           <h1>We're sorry, we cannot find that page!</h1>
           <p>You're seeing this message because:</p>
           <ul>
@@ -19,11 +19,11 @@ get_header(); ?>
           <p>Why not search our website using the form below? Alternatively you can visit the <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Homepage">Homepage</a>.</p>
   
           <form action="<?php echo home_url( '/' ); ?>" method="get">
-              <label for="search">Search</label>
-              <input id="search" name="s" type="text" value="<?php the_search_query(); ?>" placeholder="Enter a keyword or phrase">
-              <input name="submit" type="submit" value="Search">
+            <label for="search">Search</label>
+            <input id="search" name="s" type="text" value="<?php the_search_query(); ?>" placeholder="Enter a keyword or phrase">
+            <input name="submit" type="submit" value="Search">
           </form>
         </div>
-      </div><!--/row-->
+      </section><!--/row-->
   
 <?php get_footer(); ?>
