@@ -2,16 +2,14 @@
 //Prepros handles this import and it may cause errors if using another preprocessor.
 @import "bourbon";
 
-//Settings
-@import "settings";
-
 // Normalize
 @import "normalize";
 
-//Foundation (All components)
-@import "foundation";
+//Foundation
+@import "settings";
+@import "foundation"; //Import all Foundation components
 
-// Or selectively include components
+// ...Or selectively include the components you need:
 // @import
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
