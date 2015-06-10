@@ -120,9 +120,15 @@ function my_custom_sizes( $sizes ) {
 }*/
 
 //Custom WP Admin Login logo
-/*function custom_admin_logo() { echo ' <style type="text/css"> #header-logo { background-image: url('.get_bloginfo('stylesheet_directory').'/img/logo.png) !important; } </style> '; 
-}
-add_action('admin_head', 'custom_admin_logo');*/
+/*function custom_login_logo() { ?>
+    <style type="text/css">
+        .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/site-login-logo.png);
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'custom_login_logo' );*/
 
 //Remove User Roles we're not using
 /*remove_role( 'contributor' );
