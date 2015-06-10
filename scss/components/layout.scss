@@ -7,13 +7,7 @@ This is the main SCSS file, each page template's layout elements defined here */
 .main-header {
   @include grid-row;
 }
-@media #{$small-only} {
-  .main-header {
-
-  }
-}
-
-@media #{$medium-only} {
+@media #{$medium-up} {
   .main-header {
 
   }
@@ -23,14 +17,8 @@ This is the main SCSS file, each page template's layout elements defined here */
 .main-footer {
   @include grid-row;
 }
-@media #{$small-only} {
-  .main-footer {
-
-  }
-}
-
-@media #{$medium-only} {
-  .main-footer {
+@media #{$medium-up} {
+  .main-header {
 
   }
 }
@@ -47,14 +35,8 @@ used as an example */
     @include grid-column(12);
   }
 }
-@media #{$small-only} {
-  .sample_content {
-
-  }
-}
-
-@media #{$medium-only} {
-  .sample_content {
+@media #{$medium-up} {
+  .main-header {
 
   }
 }
