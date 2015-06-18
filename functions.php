@@ -145,4 +145,9 @@ remove_role( 'subscriber' );*/
     $post_types = get_post_types(); $query->set( 'post_type', $post_types ); return $query; }
   }
 add_filter( 'pre_get_posts', 'add_custom_types_to_tax' );*/
+
+//Disable native emjoi support
+/*remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );*/
+
 ?>
