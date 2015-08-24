@@ -13,15 +13,5 @@ p {
 }
 
 a {
-  color: $white;
   @include transition(color 300ms);
-
-  &:visited {
-    color: $white;
-  }
-
-  &:hover, 
-  &:active {
-    color: $base;
-  }
 }

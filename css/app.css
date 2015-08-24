@@ -8705,16 +8705,9 @@ a, a:visited, a:active, a:focus {
 /* Fonts */
 /* Type */
 a {
-  color: #FFFFFF;
   -webkit-transition: color 300ms;
   -moz-transition: color 300ms;
   transition: color 300ms;
-}
-a:visited {
-  color: #FFFFFF;
-}
-a:hover, a:active {
-  color: #AAAAAA;
 }
 
 /* Global Elements */
@@ -9835,42 +9828,42 @@ stretchRight
 }
 /* Menus */
 /* Main/header menu */
-.main-menu div .menu .menu-item a {
-  color: #008CBA;
+.main-menu div ul li a {
+  color: #000000;
 }
-.main-menu div .menu .menu-item a:hover, .main-menu div .menu .menu-item a:active {
-  color: #e7e7e7;
+.main-menu div ul li a:hover, .main-menu div ul li a:active {
+  color: #EFEFEF;
 }
-.main-menu div .menu .menu-item a:visited {
-  color: #008CBA;
+.main-menu div ul li a:visited {
+  color: #000000;
 }
-.main-menu div .menu .menu-item.current-menu-item a, .main-menu div .menu .menu-item.current-page-parent a {
+.main-menu div ul li.current-menu-item a, .main-menu div ul li.current-page-parent a {
   color: #f04124;
 }
-.main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item a {
-  color: #008CBA;
+.main-menu div ul li.menu-item-has-children ul li a {
+  color: #000000;
 }
-.main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item a:hover, .main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item a:active {
-  color: #e7e7e7;
+.main-menu div ul li.menu-item-has-children ul li a:hover, .main-menu div ul li.menu-item-has-children ul li a:active {
+  color: #EFEFEF;
 }
-.main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item a:visited {
-  color: #008CBA;
+.main-menu div ul li.menu-item-has-children ul li a:visited {
+  color: #000000;
 }
-.main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item.current-menu-item a, .main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item.current-page-parent a {
+.main-menu div ul li.menu-item-has-children ul li.current-menu-item a, .main-menu div ul li.menu-item-has-children ul li.current-page-parent a {
   color: #f04124;
 }
 
 /* Footer menu */
-.footer-menu div .menu .menu-item a {
-  color: #008CBA;
+.footer-menu div ul li a {
+  color: #000000;
 }
-.footer-menu div .menu .menu-item a:hover, .footer-menu div .menu .menu-item a:active {
-  color: #e7e7e7;
+.footer-menu div ul li a:hover, .footer-menu div ul li a:active {
+  color: #EFEFEF;
 }
-.footer-menu div .menu .menu-item a:visited {
-  color: #008CBA;
+.footer-menu div ul li a:visited {
+  color: #000000;
 }
-.footer-menu div .menu .menu-item.current-menu-item a, .footer-menu div .menu .menu-item.current-page-parent a {
+.footer-menu div ul li.current-menu-item a, .footer-menu div ul li.current-page-parent a {
   color: #f04124;
 }
 

@@ -3,18 +3,18 @@
 /* Main/header menu */
 .main-menu {
   div {
-    .menu {
-      .menu-item {
+    ul {
+      li {
         a { 
-          color: $primary-color;
+          color: $black;
 
           &:hover, 
           &:active {
-            color: $secondary-color;
+            color: $silver;
           }
 
           &:visited {
-            color: $primary-color;
+            color: $black;
           }
         }
 
@@ -26,18 +26,18 @@
         }
 
         &.menu-item-has-children {
-          .sub-menu {
-            .menu-item {
+          ul {
+            li {
               a {
-                color: $primary-color;
+                color: $black;
 
                 &:hover, 
                 &:active {
-                  color: $secondary-color;
+                  color: $silver;
                 }
 
                 &:visited {
-                  color: $primary-color;
+                  color: $black;
                 }
               }
 
@@ -58,18 +58,18 @@
 /* Footer menu */
 .footer-menu {
   div {
-    .menu {
-      .menu-item {
+    ul {
+      li {
         a {
-          color: $primary-color;
+          color: $black;
 
           &:hover, 
           &:active {
-            color: $secondary-color;
+            color: $silver;
           }
 
           &:visited {
-            color: $primary-color;
+            color: $black;
           }
         }
 
