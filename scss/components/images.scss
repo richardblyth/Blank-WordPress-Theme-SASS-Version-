@@ -8,3 +8,8 @@ $main-sprite-image: 'images/main-sprite'; /* Path to the main sprite */
   @include retina-image($main-sprite-image, $main-sprite-size);
   background-repeat: no-repeat;
 }
+
+/* For individual retina backgrounds, use - 
+@include retina-image('../images/logo', 150px 50px);
+background-position: 0 0;
+background-repeat: no-repeat; */

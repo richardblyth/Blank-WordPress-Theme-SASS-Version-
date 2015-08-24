@@ -7,12 +7,12 @@ $(".js-tabs-menu a").click(function(event) {
   $(this).parent().addClass("current");
   $(this).parent().siblings().removeClass("current");
 
-  //Setup variable for tab
+  //Setup variable for tab using its href
   var tab = $(this).attr("href");
   
-  //If its not the current tab, display none
-  $(".js-tab-single").not(tab).css("display", "none");
+  //If its not the current tab, hide it
+  $(".js-tab-single").not(tab).css("visibility", "hidden");
 
-  //Fade in the current tab
-  $(tab).fadeIn();
+  //Show the corresponding tab
+  $(tab).addClass("current");
 });

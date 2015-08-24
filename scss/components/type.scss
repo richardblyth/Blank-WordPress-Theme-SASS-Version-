@@ -1,0 +1,27 @@
+/* Type */
+
+h1, 
+h2,
+h3, 
+h4, 
+h5 {
+
+}
+
+p {
+
+}
+
+a {
+  color: $white;
+  @include transition(color 300ms);
+
+  &:visited {
+    color: $white;
+  }
+
+  &:hover, 
+  &:active {
+    color: $base;
+  }
+}

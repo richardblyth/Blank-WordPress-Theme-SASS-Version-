@@ -41,13 +41,13 @@ Example markup -
     width: 100%;
 
     .js-tab-single {
-      display: none;
+      visibility: hidden;
       height: 100% !important;
     }
     
     /* Apply this class to the tab to display first */
     .js-tab-first {
-      display: block;
+      visibility: visible;
     }
   }
 }

@@ -1,14 +1,13 @@
 /* Global Elements */
 
+body {
+  background-color: $white;
+  color: $black;
+}
+
 img {
   width: 100%;
   height: auto !important;
-}
-
-p {
-  img { 
-    margin: 0.5em auto; 
-  }
 }
 
 iframe {
@@ -16,7 +15,12 @@ iframe {
 }
 
 /* Global Mixins */
-@mixin background-cover() {
+@mixin backgroundCover() {
   background-position: 50% 50%;
   background-size: cover;
+}
+
+@mixin sectionPadding() {
+  padding-bottom: rem-calc(30);
+  padding-top: rem-calc(30);
 }

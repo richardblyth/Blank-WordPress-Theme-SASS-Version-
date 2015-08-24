@@ -25,9 +25,6 @@ $('.example-carousel').slick({
   margin-bottom: 0;
 
   div {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     z-index: 1;
   }
 
@@ -58,10 +55,10 @@ $('.example-carousel').slick({
     z-index: 2;
   }
   .slick-prev {
-    left: 2rem;
+    left: rem-calc(20);
   }
   .slick-next {
-    right: 2rem;
+    right: rem-calc(20);
   }
 }
 

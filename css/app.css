@@ -8703,14 +8703,29 @@ a, a:visited, a:active, a:focus {
 }
 
 /* Fonts */
+/* Type */
+a {
+  color: #FFFFFF;
+  -webkit-transition: color 300ms;
+  -moz-transition: color 300ms;
+  transition: color 300ms;
+}
+a:visited {
+  color: #FFFFFF;
+}
+a:hover, a:active {
+  color: #AAAAAA;
+}
+
 /* Global Elements */
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
 img {
   width: 100%;
   height: auto !important;
-}
-
-p img {
-  margin: 0.5em auto;
 }
 
 iframe {
@@ -8759,6 +8774,10 @@ $black         : #000000 !default;
   }
 }
 
+/* For individual retina backgrounds, use - 
+@include retina-image('../images/logo', 150px 50px);
+background-position: 0 0;
+background-repeat: no-repeat; */
 /* Hover Panel Effect 
 Example -
 <div class="hoverpanel">
@@ -8801,12 +8820,8 @@ Example -
   vertical-align: middle;
   width: 100%;
 }
-.hoverpanel .hoverpanel-hover:hover {
-  opacity: 0.85;
-}
-
-.touch {
-  /* Apply appropriate styling for touch devices */
+.hoverpanel.active .hoverpanel-hover {
+  opacity: 1;
 }
 
 /*
@@ -9820,46 +9835,42 @@ stretchRight
 }
 /* Menus */
 /* Main/header menu */
-.main-menu div .menu {
-  /* Current page indicator */
-  /* Drop downs */
-}
 .main-menu div .menu .menu-item a {
   color: #008CBA;
 }
-.main-menu div .menu .menu-item a:hover {
+.main-menu div .menu .menu-item a:hover, .main-menu div .menu .menu-item a:active {
   color: #e7e7e7;
 }
-.main-menu div .menu .current-menu-item a,
-.main-menu div .menu .current-page-parent a {
-  color: #f04124;
-}
-.main-menu div .menu .menu-item-has-children .sub-menu {
-  /* Current page indicator */
-}
-.main-menu div .menu .menu-item-has-children .sub-menu .menu-item a {
+.main-menu div .menu .menu-item a:visited {
   color: #008CBA;
 }
-.main-menu div .menu .menu-item-has-children .sub-menu .menu-item a:hover {
+.main-menu div .menu .menu-item.current-menu-item a, .main-menu div .menu .menu-item.current-page-parent a {
+  color: #f04124;
+}
+.main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item a {
+  color: #008CBA;
+}
+.main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item a:hover, .main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item a:active {
   color: #e7e7e7;
 }
-.main-menu div .menu .menu-item-has-children .sub-menu .current-menu-item a,
-.main-menu div .menu .menu-item-has-children .sub-menu .current-page-parent a {
+.main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item a:visited {
+  color: #008CBA;
+}
+.main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item.current-menu-item a, .main-menu div .menu .menu-item.menu-item-has-children .sub-menu .menu-item.current-page-parent a {
   color: #f04124;
 }
 
 /* Footer menu */
-.footer-menu div .menu {
-  /* Current page indicator */
-}
 .footer-menu div .menu .menu-item a {
   color: #008CBA;
 }
-.footer-menu div .menu .menu-item a:hover {
+.footer-menu div .menu .menu-item a:hover, .footer-menu div .menu .menu-item a:active {
   color: #e7e7e7;
 }
-.footer-menu div .menu .current-menu-item a,
-.footer-menu div .menu .current-page-parent a {
+.footer-menu div .menu .menu-item a:visited {
+  color: #008CBA;
+}
+.footer-menu div .menu .menu-item.current-menu-item a, .footer-menu div .menu .menu-item.current-page-parent a {
   color: #f04124;
 }
 
@@ -9993,11 +10004,11 @@ Example markup -
   /* Apply this class to the tab to display first */
 }
 .js-tab-container .js-tabs .js-tab-single {
-  display: none;
+  visibility: hidden;
   height: 100% !important;
 }
 .js-tab-container .js-tabs .js-tab-first {
-  display: block;
+  visibility: visible;
 }
 
 /* Override these settngs in carousels.js */
@@ -10177,9 +10188,6 @@ $('.example-carousel').slick({
   /* Controls */
 }
 .example-carousel div {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   z-index: 1;
 }
 .example-carousel .slick-dots {
@@ -10203,10 +10211,10 @@ $('.example-carousel').slick({
   z-index: 2;
 }
 .example-carousel .slick-prev {
-  left: 2rem;
+  left: 1.25rem;
 }
 .example-carousel .slick-next {
-  right: 2rem;
+  right: 1.25rem;
 }
 
 @media only screen and (max-width: 40em) {

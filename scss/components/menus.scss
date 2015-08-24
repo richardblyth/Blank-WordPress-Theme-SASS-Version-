@@ -7,36 +7,46 @@
       .menu-item {
         a { 
           color: $primary-color;
-        }
-        a:hover {
-          color: $secondary-color;
-        }
-      }
 
-      /* Current page indicator */
-      .current-menu-item,
-      .current-page-parent {
-        a {
-          color: $alert-color;
-        }
-      }
-
-      /* Drop downs */
-      .menu-item-has-children {
-        .sub-menu {
-          .menu-item {
-            a {
-              color: $primary-color;
-            }
-            a:hover{
-              color: $secondary-color;
-            }
+          &:hover, 
+          &:active {
+            color: $secondary-color;
           }
-          /* Current page indicator */
-          .current-menu-item,
-          .current-page-parent {
-            a {
-              color: $alert-color;
+
+          &:visited {
+            color: $primary-color;
+          }
+        }
+
+        &.current-menu-item,
+        &.current-page-parent {
+          a {
+            color: $alert-color;
+          }
+        }
+
+        &.menu-item-has-children {
+          .sub-menu {
+            .menu-item {
+              a {
+                color: $primary-color;
+
+                &:hover, 
+                &:active {
+                  color: $secondary-color;
+                }
+
+                &:visited {
+                  color: $primary-color;
+                }
+              }
+
+              &.current-menu-item,
+              &.current-page-parent {
+                a {
+                  color: $alert-color;
+                }
+              }        
             }
           }
         }
@@ -52,17 +62,22 @@
       .menu-item {
         a {
           color: $primary-color;
-        }
-        a:hover {
-          color: $secondary-color;
-        }
-      }
 
-      /* Current page indicator */
-      .current-menu-item,
-      .current-page-parent {
-        a {
-          color: $alert-color;
+          &:hover, 
+          &:active {
+            color: $secondary-color;
+          }
+
+          &:visited {
+            color: $primary-color;
+          }
+        }
+
+        &.current-menu-item,
+        &.current-page-parent {
+          a {
+            color: $alert-color;
+          }
         }
       }
     }

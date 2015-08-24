@@ -1,3 +1,6 @@
+// FastClick: jQuery
+//@prepros-prepend vendor/jquery.js
+
 // FastClick: polyfill to remove click delays on browsers with touch UIs
 //@prepros-prepend vendor/fastclick.js
 
@@ -49,13 +52,45 @@ $(document).foundation();
 
 $(function() {
 
+  /* Foundation Device Size Variables */
+  var isSmallDevice = Foundation.utils.is_small_only();
+  var isMediumDevice = Foundation.utils.is_medium_only();
+  var isLargeUpDevice = Foundation.utils.is_large_up();
+
+  /* Modernizr Touch Sample
+  if (Modernizr.touch) {
+    Do something for touch
+  } */
+
+  /* Basic Drop Down Menu for WordPress */
+  if (!Modernizr.touch) {
+    $('.menu .menu-item-has-children').mouseover(function () {  
+      $('ul:first', this).stop(true, true).addClass('active');
+    });
+    $('.menu .menu-item-has-children').mouseleave(function () {   
+      $('ul:first', this).stop(true, true).removeClass('active');
+    });
+  }
+
+  /* Hover Panels (hoverpanels.scss) */
+  if (!Modernizr.touch) {
+    $('.hoverpanel').on('mouseenter', function (e){
+      $(this).addClass('active');
+    })
+    .on('mouseleave', function (e){
+      $(this).removeClass('active');
+    });
+  }
+
   /* Slick */
-  $('.example-carousel').slick({
+  /*$('.example-carousel').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
     arrows: true
-  });
-
+  });*/
 
 });
+
+/* $(document).ready(function(){
+}); */

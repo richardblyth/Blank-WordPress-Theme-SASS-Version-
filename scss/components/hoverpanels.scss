@@ -22,6 +22,7 @@ Example -
     width: 100%;
     z-index: 2;
   }
+
   .hoverpanel-hover {
     display: table;
     height: 100%;
@@ -40,13 +41,11 @@ Example -
       vertical-align: middle;
       width: 100%;
     }
+  }
 
-    &:hover {
-      opacity: 0.85;
+  &.active {
+    .hoverpanel-hover {
+      opacity: 1;
     }
   }
-}
-
-.touch {
-  /* Apply appropriate styling for touch devices */
 }

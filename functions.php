@@ -1,25 +1,23 @@
 <?php
 // Custom Functions
 
-// Load jQuery 2.1.3
-if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+// Load jQuery 2.1.3 - if not using jquery inside app.js
+/*if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js");
    wp_enqueue_script('jquery');
-}
+}*/
 
 // Correctly Enqueue Other Scripts and CSS
 function other_scripts() {
 
   //CSS
   wp_enqueue_style( 'appcss', get_template_directory_uri() . '/css/app.css', array(), null );
-
-  //Head Scripts
-  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3');
-  
+    
   //End of Document Scripts
-  wp_enqueue_script( 'appjs', get_template_directory_uri() . '/js/app-dist.js', array('jquery'), '1.0', true );
+  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', true);
+  wp_enqueue_script( 'appjs', get_template_directory_uri() . '/js/app-dist.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'other_scripts' );
 
