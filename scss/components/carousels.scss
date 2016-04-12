@@ -1,4 +1,4 @@
-/* Slick Carousels */
+/* Slick Carousels - Theme */
 /* These classes override those in slick.scss */
 
 /* Example markup 
@@ -19,57 +19,3 @@ $('.example-carousel').slick({
   arrows: true
 });
 */
-
-/* Example Carousel (as per markup above) */
-.example-carousel {
-  margin-bottom: 0;
-
-  div {
-    z-index: 1;
-  }
-
-  /* Bullets */
-  .slick-dots {
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    z-index: 2;
-
-    li {
-      height: auto;
-
-      button {
-        height: auto;
-
-        &:before {
-          font-size: rem-calc(30);
-        }
-      }
-    }
-  }
-
-  /* Controls */
-  .slick-prev,
-  .slick-next {
-    bottom: 0;
-    z-index: 2;
-  }
-  .slick-prev {
-    left: rem-calc(20);
-  }
-  .slick-next {
-    right: rem-calc(20);
-  }
-}
-
-@media #{$small-only} {
-  /* for some responsive options, please use app.js */
-  .example-carousel {
-  }
-}
-
-@media #{$medium-only} {
-  /* for some responsive options, please use app.js */
-  .example-carousel {
-  }
-}

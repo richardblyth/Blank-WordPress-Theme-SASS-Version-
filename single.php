@@ -5,8 +5,8 @@ get_header(); ?>
       <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>     
         
-        <header class="sample_header">
-          <div class="inner">
+        <header>
+          <div>
             <h1><?php the_title(); ?></h1>
             <aside>
             Posted to: <?php echo get_the_category_list() ?>
@@ -15,8 +15,8 @@ get_header(); ?>
           </div>
         </header>
 
-        <article class="sample_content">
-          <div class="inner">
+        <article>
+          <div>
           <?php the_content(); ?>
           </div>
         </article>
@@ -27,8 +27,8 @@ get_header(); ?>
         <?php endwhile; ?>
 
       <?php else : ?>
-        <section class="sample_content">
-          <div class="inner">
+        <section>
+          <div>
             <h1>Oops!</h1>
             <p>Sorry, but you are looking for something that isn't here.</p>
           </div>

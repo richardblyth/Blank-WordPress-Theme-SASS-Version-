@@ -15,3 +15,38 @@ p {
 a {
   @include transition(color 300ms);
 }
+
+
+/* Type Scaling */
+@mixin type-scale($body-type-scale, $heading-type-scale) {
+  p, ul, ol, dl { 
+    font-size: $paragraph-font-size*$body-type-scale; 
+    margin-bottom: $paragraph-margin-bottom*$body-type-scale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $header-bottom-margin*$body-type-scale;
+  }
+
+  h1 { font-size: $h1-font-size*$heading-type-scale; }
+  h2 { font-size: $h2-font-size*$heading-type-scale; }
+  h3 { font-size: $h3-font-size*$heading-type-scale; }
+  h4 { font-size: $h4-font-size*$heading-type-scale; }
+  h5 { font-size: $h5-font-size*$heading-type-scale; }
+  h6 { font-size: $h6-font-size*$heading-type-scale; }
+  
+  label, 
+  input, 
+  textarea, 
+  select {
+    font-size: $paragraph-font-size*$body-type-scale; 
+  }
+}
+
+@media #{$small-only} {
+  @include type-scale(7/8, 3/4);
+}
+
+@media #{$medium-only} {
+  @include type-scale(7/8, 3/4);
+}

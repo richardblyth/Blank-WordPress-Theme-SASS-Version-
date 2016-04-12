@@ -1,5 +1,7 @@
 /* Images */
 
+
+/* Main Sprite */
 $main-sprite-size: 1150px 1500px; /* Dimensions of the main sprite */
 $main-sprite-image: 'images/main-sprite'; /* Path to the main sprite */
 
@@ -8,6 +10,7 @@ $main-sprite-image: 'images/main-sprite'; /* Path to the main sprite */
   @include retina-image($main-sprite-image, $main-sprite-size);
   background-repeat: no-repeat;
 }
+
 
 /* For individual retina backgrounds, use - 
 @include retina-image('../images/logo', 150px 50px);

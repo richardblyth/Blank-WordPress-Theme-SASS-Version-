@@ -1,14 +1,14 @@
 /* Buttons */
 
-/* All items with a class of btn- */
+/* Target all items with a class of btn- */
 [class*="btn-"] {
   display: inline-block;
-  /* BUTTON STYLING */
 
   &:visited {
   }
 
   &:active, 
+  &:focus, 
   &:hover {
   }
 }

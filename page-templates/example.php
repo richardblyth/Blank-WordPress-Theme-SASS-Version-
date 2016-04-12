@@ -1,12 +1,12 @@
 <?php
 /**
- * Template Name: General Page
- * Description: The default page template
+ * Template Name: Example
+ * Description: An example template
  */
 get_header(); ?>
 
-      <section class="sample_content">
-        <div class="inner">
+      <section>
+        <div>
         <?php if (have_posts()) :
 
           while (have_posts()) : the_post(); ?>

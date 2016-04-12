@@ -3,18 +3,18 @@
 
 get_header(); ?>
 
-    <header class="sample_header">
-      <div class="inner">
+    <header>
+      <div>
       <h1><?php echo single_tag_title(); ?></h1>
       </div>
     </header>
 
-    <section class="sample_content" id="category-posts">
+    <section>
 
     <?php if ( have_posts() ) : ?>
 
 
-      <div class="inner"> 
+      <div> 
 
       <?$count = 0; //set up counter variable
       ?>
@@ -46,7 +46,7 @@ get_header(); ?>
       </div>
 
       <?php else : ?>
-          <div class="inner">
+          <div>
           <p>Sorry, but you are looking for something that isn't here.</p>
           </div>
       <?php endif; ?>     

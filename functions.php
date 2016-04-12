@@ -1,13 +1,15 @@
 <?php
 // Custom Functions
 
-// Load jQuery 2.1.3 - if not using jquery inside app.js
-/*if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+
+// Load jQuery 2.1.4 - if not using jquery inside app.js
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js");
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js");
    wp_enqueue_script('jquery');
-}*/
+}
+
 
 // Correctly Enqueue Other Scripts and CSS
 function other_scripts() {
@@ -21,15 +23,18 @@ function other_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'other_scripts' );
 
+
 // Remove Unnecessary Meta Tags
 remove_action( 'wp_head', 'wp_generator' ) ; 
 remove_action( 'wp_head', 'wlwmanifest_link' ) ; 
 remove_action( 'wp_head', 'rsd_link' ) ;
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
+
 // Remove Secondary Feeds
 remove_action( 'wp_head', 'feed_links', 2 ); 
 remove_action( 'wp_head', 'feed_links_extra', 3 );
+
 
 // Completely Disable Comments and Trackbacks
 /*function df_disable_comments_post_types_support() {
@@ -86,11 +91,13 @@ add_action('admin_init', 'df_disable_comments_dashboard');*/
 }
 add_action('init', 'df_disable_comments_admin_bar');*/
 
+
 // Add Additional Menus to the Theme - change 'themename' to match your theme name
 register_nav_menus( array(
   'main' => __( 'Main Menu', 'themename'),
   'footer' => __( 'Footer Links', 'themename')
 ) );
+
 
 // Nicetrim - for text previews
 /*function nicetrim ($input, $length) { */
@@ -107,6 +114,7 @@ register_nav_menus( array(
   return $trimmed_text;
 }*/
 
+
 //Custom Image Sizes
 /*add_image_size('team_thumbnail', 180, 180, true);*/
 //Add the new sizes to WP Admin
@@ -116,6 +124,7 @@ function my_custom_sizes( $sizes ) {
     'team_thumbnail' => __( 'Team Thumbnail' )
   ));
 }*/
+
 
 //Custom WP Admin Login logo
 /*function custom_login_logo() { ?>
@@ -128,10 +137,12 @@ function my_custom_sizes( $sizes ) {
 <?php }
 add_action( 'login_enqueue_scripts', 'custom_login_logo' );*/
 
+
 //Remove User Roles we're not using
 /*remove_role( 'contributor' );
 remove_role( 'editor' );
 remove_role( 'subscriber' );*/
+
 
 // Hide the WordPress Admin Bar on the front end (when admin is logged in)
 /*add_filter('show_admin_bar', '__return_false');*/
@@ -147,5 +158,57 @@ add_filter( 'pre_get_posts', 'add_custom_types_to_tax' );*/
 //Disable native emjoi support
 /*remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );*/
+
+
+//Re-label Posts as xxxx
+/*function revcon_change_post_label() {
+  global $menu;
+  global $submenu;
+  $menu[5][0] = 'Blog';
+  $submenu['edit.php'][5][0] = 'Blog';
+  $submenu['edit.php'][10][0] = 'Add Bog Post';
+  $submenu['edit.php'][16][0] = 'Blog Tags';
+  echo '';
+}
+function revcon_change_post_object() {
+  global $wp_post_types;
+  $labels = &$wp_post_types['post']->labels;
+  $labels->name = 'Blog';
+  $labels->singular_name = 'Blog Post';
+  $labels->add_new = 'Add Blog Post';
+  $labels->add_new_item = 'Add Blog Post';
+  $labels->edit_item = 'Edit Blog Post';
+  $labels->new_item = 'Blog';
+  $labels->view_item = 'View Blog';
+  $labels->search_items = 'Search Blog';
+  $labels->not_found = 'No Blog Posts found';
+  $labels->not_found_in_trash = 'No Blog Posts found in Trash';
+  $labels->all_items = 'All Blog Posts';
+  $labels->menu_name = 'Blog';
+  $labels->name_admin_bar = 'Blog';
+}
+add_action( 'admin_menu', 'revcon_change_post_label' );
+add_action( 'init', 'revcon_change_post_object' );*/
+
+
+//Add Theme Support for Thumbnails
+/*function custom_theme_setup() {
+  add_theme_support( 'post-thumbnails', array('post') );
+}
+add_action( 'after_setup_theme', 'custom_theme_setup' );*/
+
+
+// Disable Update Notifcations
+/*$func = function ($a) {
+    global $wp_version;
+    return (object) array(
+        'last_checked' => time(),
+        'version_checked' => $wp_version,
+    );
+};
+add_filter('pre_site_transient_update_core', $func); 
+add_filter('pre_site_transient_update_plugins', $func);
+add_filter('pre_site_transient_update_themes', $func);*/
+
 
 ?>

@@ -1,11 +1,11 @@
 <?php
-/* Category.php - displays all posts in a category */
+/* Archive.php - displays archive of posts */
 
 get_header(); ?>
 
       <header>
         <div>
-        <h1><?php echo single_cat_title(); ?></h1>
+        <h1><?php //echo single_cat_title(); ?></h1>
         </div>
       </header><!--/row-->
 

@@ -1,23 +1,23 @@
-// FastClick: jQuery
-//@prepros-prepend vendor/jquery.js
-
 // FastClick: polyfill to remove click delays on browsers with touch UIs
-//@prepros-prepend vendor/fastclick.js
+// prepros-prepend vendor/fastclick.js
 
 // jQuery.cookie: A simple, lightweight jQuery plugin for reading, writing and deleting cookies
-//@prepros-prepend vendor/jquery.cookie.js
+// mprepros-prepend vendor/jquery.cookie.js
 
 // Placeholder.js: polyfill for older browsers (IE9) to support input inline placeholders
-//@prepros-prepend vendor/placeholder.js
+// prepros-prepend vendor/placeholder.js
 
-// Foundation JavaScript
+// Other plugins: from HTML 5 Boilerplate 4.3.0
+//@prepros-prepend vendor/plugins.js
+
+// Foundation: JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
 // N.B. insert '@' after '//' to include component
 
-// All components
+// Foundation: all components
 // prepros-prepend foundation.js 
 
-// Or selectively include components
+// Or selectively include Foundation components
 //@prepros-prepend foundation/foundation.js
 // prepros-prepend foundation/foundation.abide.js
 // prepros-prepend foundation/foundation.accordion.js
@@ -40,10 +40,7 @@
 //@prepros-prepend vendor/slick.js
 
 // Tabs
-//@prepros-prepend vendor/tabs.js
-
-// Other plugins: from HTML 5 Boilerplate 4.3.0
-//@prepros-prepend plugins.js
+// prepros-prepend vendor/tabs.js
 
 
 /* INITIALISE */
@@ -57,10 +54,6 @@ $(function() {
   var isMediumDevice = Foundation.utils.is_medium_only();
   var isLargeUpDevice = Foundation.utils.is_large_up();
 
-  /* Modernizr Touch Sample
-  if (Modernizr.touch) {
-    Do something for touch
-  } */
 
   /* Basic Drop Down Menu for WordPress */
   if (!Modernizr.touch) {
@@ -72,15 +65,6 @@ $(function() {
     });
   }
 
-  /* Hover Panels (hoverpanels.scss) */
-  if (!Modernizr.touch) {
-    $('.hoverpanel').on('mouseenter', function (e){
-      $(this).addClass('active');
-    })
-    .on('mouseleave', function (e){
-      $(this).removeClass('active');
-    });
-  }
 
   /* Slick */
   /*$('.example-carousel').slick({

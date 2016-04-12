@@ -12,15 +12,30 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1">
     <title><?php wp_title(); ?></title>
 
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Richard Blyth">
-
     <!-- Google Analytics to go here -->
 
-    <?php wp_head(); ?>
+    <?php 
+    //Facebook Sharing Meta
+    if (is_singular('post')) { ?>
+    <meta property="og:title" content="<?php the_title(); ?>">
+    <meta property="og:description" content="<?php echo strip_tags( get_the_excerpt() ); ?>">
+    <meta property="og:url" content="<?php the_permalink(); ?>">
+
+      <?php if ( has_post_thumbnail() ) { ?>
+        <meta property="og:image" content="<?php the_post_thumbnail_url('facebook-share-image'); ?>">
+      <?php } else { ?>
+        <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/images/facebook-share__default.jpg">
+      <?php } 
+    } ?>
+
+    <?php 
+    if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+
+    wp_head(); ?>
   </head>
-  <body>
-    <header class="main-header">    
+
+  <body <?php body_class(); ?>>
+    <header>    
       <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Homepage">Homepage</a>
 
       <nav class="main-menu">

@@ -14,8 +14,8 @@ foreach($query_args as $key => $string) {
 
 get_header(); ?>
 
-    <header class="sample_header">
-      <div class="inner">
+    <header>
+      <div>
       <?php if ($wp_query->found_posts == 1) { ?>
         <h1>1 result for <?php echo get_search_query(); ?></h1>
       <?php } else { ?>
@@ -27,7 +27,7 @@ get_header(); ?>
 
     <?php if ( have_posts() ) : ?>
 
-    <section class="sample_content">
+    <section>
 
       <?$count = 0; //set up counter variable
       ?>
@@ -57,15 +57,15 @@ get_header(); ?>
       <?php endwhile; ?>
     </section>
     
-    <nav>>
+    <nav>
       <div class="nav-previous"><?php next_posts_link( 'Previous' ); ?></div>
       <div class="nav-next"><?php previous_posts_link( 'Next' ); ?></div>
     </nav>
 
     <?php else : ?>
 
-      <section class="sample_content">
-        <div class="inner">
+      <section>
+        <div>
           <p>Sorry, but nothing matched your search criteria.</p>
         </div>
       </section>

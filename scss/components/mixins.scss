@@ -1,0 +1,126 @@
+/* Mixins */
+@mixin backgroundCover() {
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+@mixin backgroundContain() {
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+@mixin fixedAspectRatioContainer($width, $height) {
+  height: 0;
+  overflow: hidden;
+  padding-top: $height/$width * 100%;
+  position: relative;
+
+  > * {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@mixin fullWidth() {
+  max-width: 100%;
+}
+
+@mixin hortizontalAlign($position: relative, $left: 50%, $right: 50%) {
+  left: $left;
+  position: $position;
+  right: $right;
+  @include transform(translateX(-50%));
+}
+
+@mixin lastParagraphMargin() {
+  p, ul, ol, dl {
+    &:last-child { margin-bottom: 0; }
+  } 
+}
+
+@mixin panelPaddingTB($paddingtb) {
+  padding-bottom: ($paddingtb / 2);
+  padding-top: ($paddingtb / 2);
+
+  @media #{$medium-up} {
+    padding-bottom: ($paddingtb / 2.5);
+    padding-top: ($paddingtb / 2.5);
+  }
+
+  @media #{$large-up} {
+    padding-bottom: $paddingtb;
+    padding-top: $paddingtb;
+  }
+}
+
+@mixin panelPaddingAll($paddingall) {
+  padding-bottom: ($paddingall / 2);
+  padding-left: ($paddingall / 2);
+  padding-right: ($paddingall / 2);
+  padding-top: ($paddingall / 2);
+
+  @media #{$medium-up} {
+    padding-bottom: ($paddingall / 2.5);
+    padding-left: ($paddingall / 2.5);
+    padding-right: ($paddingall / 2.5);
+    padding-top: ($paddingall / 2.5);
+  }
+
+  @media #{$large-up} {
+    padding-bottom: $paddingall;
+    padding-left: $paddingall;
+    padding-right: $paddingall;
+    padding-top: $paddingall;
+  }
+}
+
+@mixin panelPaddingB($paddingb) {
+  padding-bottom: ($paddingb / 2);
+
+  @media #{$medium-up} {
+    padding-bottom: ($paddingb / 2.5);
+  }
+
+  @media #{$large-up} {
+    padding-bottom: $paddingb;
+  }
+}
+
+
+@mixin placeholderColour($placeholdercolour) {
+  ::-webkit-input-placeholder {
+    color: $placeholdercolour;
+  }
+  :-moz-placeholder {
+    color: $placeholdercolour;
+  }
+  ::-moz-placeholder {
+    color: $placeholdercolour;
+  }
+  :-ms-input-placeholder {
+   color: $placeholdercolour;
+  }
+}
+
+
+@mixin rotate($angle) {
+  transform: rotate($angle);
+  -webkit-transform: rotate($angle);
+  -moz-transform: rotate($angle);
+  -o-transform: rotate($angle);
+  -ms-transform: rotate($angle);
+}
+
+@mixin sectionPadding() {
+  padding-bottom: rem-calc(30);
+  padding-top: rem-calc(30);
+}
+
+@mixin verticalAlign($position: relative, $top: 50%) {
+  position: $position;
+  top: $top;
+  @include transform(translateY(-50%));
+}
