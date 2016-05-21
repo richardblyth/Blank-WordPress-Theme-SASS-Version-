@@ -16,7 +16,7 @@
 
     <script>
       //Use as required
-      //var templateUrl = '<?= get_bloginfo("template_url"); ?>';
+      //var templateUrl = '<?php get_template_directory_uri(); ?>';
     </script>
     <?php wp_footer(); ?>
   </body>

@@ -16,10 +16,8 @@ get_header(); ?>
 
       <div> 
 
-      <?$count = 0; //set up counter variable
-      ?>
-        
-        <?php while ( have_posts() ) : the_post(); 
+      <?php $count = 0; //set up counter variable
+        while ( have_posts() ) : the_post(); 
 
         $count++; //increment the variable by 1 each time the loop executes
         ?>
@@ -39,9 +37,9 @@ get_header(); ?>
 
       <?php
         //every 3 items close new row and start a new one
-        if ($count % 3 == 0) { ?></div><div class="row"><?php } ?>  
+        if ($count % 3 == 0) { ?></div><div class="row"><?php }
 
-      <?php endwhile; ?>
+        endwhile; ?>
 
       </div>
 
@@ -49,7 +47,7 @@ get_header(); ?>
           <div>
           <p>Sorry, but you are looking for something that isn't here.</p>
           </div>
-      <?php endif; ?>     
+      <?php endif; ?>
 
     </section>
 

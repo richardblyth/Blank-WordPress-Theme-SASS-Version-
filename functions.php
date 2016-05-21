@@ -191,9 +191,15 @@ add_action( 'admin_menu', 'revcon_change_post_label' );
 add_action( 'init', 'revcon_change_post_object' );*/
 
 
-//Add Theme Support for Thumbnails
+//Add Theme Support
 /*function custom_theme_setup() {
+  add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'custom-background' );
+  add_theme_support( 'custom-header' );
+  add_theme_support( 'custom-logo' );
+  add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
   add_theme_support( 'post-thumbnails', array('post') );
+  add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'custom_theme_setup' );*/
 
@@ -210,5 +216,10 @@ add_filter('pre_site_transient_update_core', $func);
 add_filter('pre_site_transient_update_plugins', $func);
 add_filter('pre_site_transient_update_themes', $func);*/
 
+
+//Editor Styles
+function add_editor_styles() {
+  add_editor_style( 'editor-styles.css' );
+}
 
 ?>
