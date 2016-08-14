@@ -2,13 +2,13 @@
 // Custom Functions
 
 
-// Load jQuery 2.1.4 - if not using jquery inside app.js
-if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+// Load jQuery 2.1.4 - if not using version shipped with WordPress
+/* if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js");
    wp_enqueue_script('jquery');
-}
+}*/
 
 
 // Correctly Enqueue Other Scripts and CSS
@@ -156,8 +156,8 @@ remove_role( 'subscriber' );*/
 add_filter( 'pre_get_posts', 'add_custom_types_to_tax' );*/
 
 //Disable native emjoi support
-/*remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );*/
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 
 //Re-label Posts as xxxx
@@ -192,7 +192,7 @@ add_action( 'init', 'revcon_change_post_object' );*/
 
 
 //Add Theme Support
-/*function custom_theme_setup() {
+function custom_theme_setup() {
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'custom-background' );
   add_theme_support( 'custom-header' );
@@ -201,7 +201,7 @@ add_action( 'init', 'revcon_change_post_object' );*/
   add_theme_support( 'post-thumbnails', array('post') );
   add_theme_support( 'title-tag' );
 }
-add_action( 'after_setup_theme', 'custom_theme_setup' );*/
+add_action( 'after_setup_theme', 'custom_theme_setup' );
 
 
 // Disable Update Notifcations
@@ -220,6 +220,11 @@ add_filter('pre_site_transient_update_themes', $func);*/
 //Editor Styles
 function add_editor_styles() {
   add_editor_style( 'editor-styles.css' );
+}
+
+//Content Width
+if ( ! isset( $content_width ) ) {
+  $content_width = 1200;
 }
 
 ?>

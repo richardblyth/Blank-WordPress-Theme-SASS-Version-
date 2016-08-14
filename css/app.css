@@ -8821,6 +8821,53 @@ iframe {
 }
 
 /* WordPress Classes */
+.wp-caption {
+  font-size: inherit;
+}
+
+.wp-caption-text {
+  font-size: inherit;
+}
+
+.sticky {
+  font-size: inherit;
+}
+
+.screen-reader-text {
+  font-size: inherit;
+}
+
+.gallery-caption {
+  font-size: inherit;
+}
+
+.bypostauthor {
+  font-size: inherit;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 1rem 1rem 0;
+}
+
+.aligncenter {
+  margin: 0 auto;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Images */
 /* Main Sprite */
 /* Dimensions of the main sprite */

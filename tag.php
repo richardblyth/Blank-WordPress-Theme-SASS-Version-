@@ -22,7 +22,7 @@ get_header(); ?>
         $count++; //increment the variable by 1 each time the loop executes
         ?>
 
-        <div>
+        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
           <?php
             if ( has_post_thumbnail() ) {

@@ -6,7 +6,7 @@ get_header(); ?>
         <?php while (have_posts()) : the_post(); ?>     
         
         <header>
-          <div>
+          <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <h1><?php the_title(); ?></h1>
             <aside>
             Posted to: <?php echo get_the_category_list() ?>

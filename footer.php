@@ -9,10 +9,10 @@
     </footer>
 
     <div class="no-jsmsg">
-    <p>You currently have JavaScript disabled. This site requires JavaScript to be enabled and some functiomns of the site may not be usable or may not look correct until JavaScript is enabled. You can enable JavaScript by following <a href="http://www.google.com/support/bin/answer.py?answer=23852" title="How to enable JavaScript" rel="nofollow">this tutorial</a>.</p>
+    <p>You currently have JavaScript disabled. This site requires JavaScript to be enabled and some functiomns of the site may not be usable or may not look correct until JavaScript is enabled.</p>
     </div>
 
-    <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+    <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please >upgrade your browser to improve your experience.</p><![endif]-->
 
     <script>
       //Use as required
