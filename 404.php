@@ -1,8 +1,4 @@
 <?php
-/**
- * Template Name: 404 Template
- * Description: Error page when a page cannot be found
- */
 get_header(); ?>
 
       <section>

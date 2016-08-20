@@ -2,13 +2,13 @@
 // Custom Functions
 
 
-// Load jQuery 2.1.4 - if not using version shipped with WordPress
-/* if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+// Load jQuery 2.2.4 - if not using version shipped with WordPress
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js");
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js");
    wp_enqueue_script('jquery');
-}*/
+}
 
 
 // Correctly Enqueue Other Scripts and CSS
@@ -17,9 +17,11 @@ function other_scripts() {
   //CSS
   wp_enqueue_style( 'appcss', get_template_directory_uri() . '/css/app.css', array(), null );
     
+  //Head Scripts
+  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '3.3.1', false);
+
   //End of Document Scripts
-  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', true);
-  wp_enqueue_script( 'appjs', get_template_directory_uri() . '/js/app-dist.js', array(), '1.0', true );
+  wp_enqueue_script( 'appjs', get_template_directory_uri() . '/js/app-dist.js', array(), '1.0.6', true );
 }
 add_action( 'wp_enqueue_scripts', 'other_scripts' );
 
@@ -226,5 +228,22 @@ function add_editor_styles() {
 if ( ! isset( $content_width ) ) {
   $content_width = 1200;
 }
+
+
+//Remove version numbers from CSS/JS in head
+function remove_cssjs_ver( $src ) {
+  if( strpos( $src, '?ver=' ) )
+    $src = remove_query_arg( 'ver', $src );
+  return $src;
+}
+add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
+add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
+
+
+// Remove WP Embed Scripts
+function my_deregister_scripts(){
+  wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'my_deregister_scripts' );
 
 ?>

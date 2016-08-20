@@ -6,8 +6,8 @@ This boilerplate has been designed to provide the very basic structure for build
 * CSS3
 * PHP includes structure
 * Built on a custom build of Foundation
-* Uses jQuery 2.1.4
-* Modernizr
+* Uses jQuery 2.2.4
+* Modernizr (Development Build)
 * Normalize.css
 * SASS/CSS structure
 
