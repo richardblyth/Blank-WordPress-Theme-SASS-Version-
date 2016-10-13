@@ -52,15 +52,15 @@ if ( post_password_required() )
             'title_reply'=>'', 
             'fields' => apply_filters( 'comment_form_default_fields', array(
 
-                'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Your name *' ) . '</label> ' . '<input class="comment-form__name" placeholder="Your Name *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" ' . $aria_req . ' required /></p>', 
+                'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Your name *', 'blank-wordpress-theme' ) . '</label> ' . '<input class="comment-form__name" placeholder="Your Name *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" ' . $aria_req . ' required /></p>', 
 
-                'email'  => '<p class="comment-form-email">' . '<label for="email">' . __( 'Your Email *' ) . '</label> ' . '<input class="comment-form__email" placeholder="Your Email *" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' size="30" required />'.'</p>',
+                'email'  => '<p class="comment-form-email">' . '<label for="email">' . __( 'Your Email *', 'blank-wordpress-theme' ) . '</label> ' . '<input class="comment-form__email" placeholder="Your Email *" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' size="30" required />'.'</p>',
 
                 'url'    => ''
                 ) 
               ),
 
-              'comment_field' => '<p>' . '<label for="comment">' . __( 'Your message *' ) . '</label>' . '<textarea class="comment-form__comment" placeholder="Your message *" id="comment" name="comment" cols="45" rows="4" aria-required="true" required></textarea>' . '</p>',
+              'comment_field' => '<p>' . '<label for="comment">' . __( 'Your message *', 'blank-wordpress-theme' ) . '</label>' . '<textarea class="comment-form__comment" placeholder="Your message *" id="comment" name="comment" cols="45" rows="4" aria-required="true" required></textarea>' . '</p>',
 
               'comment_notes_after' => '',
 

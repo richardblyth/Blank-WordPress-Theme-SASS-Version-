@@ -1,9 +1,4 @@
-<?php
-/**
- * Template Name: Default
- * Description: The default page template
- */
-get_header(); ?>
+<?php get_header(); ?>
 
       <section>
         <div>
@@ -28,4 +23,4 @@ get_header(); ?>
         </div>
       </section>
 
-<?php get_footer(); ?>       
+<?php get_footer(); ?>
