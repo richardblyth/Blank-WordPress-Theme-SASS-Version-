@@ -96,8 +96,8 @@ add_action('init', 'df_disable_comments_admin_bar');*/
 
 // Add Additional Menus to the Theme - change 'themename' to match your theme name
 register_nav_menus( array(
-  'main' => __( 'Main Menu', 'themename'),
-  'footer' => __( 'Footer Links', 'themename')
+  'main' => __( 'Main Menu', 'blank-wordpress-theme'),
+  'footer' => __( 'Footer Links', 'blank-wordpress-theme')
 ) );
 
 
